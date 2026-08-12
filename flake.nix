@@ -80,6 +80,14 @@
         ];
         inherit specialArgs;
       };
+      lizzie-desktop = nixpkgs-unstable.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./desktop2/configuration.nix
+          ./common.nix
+        ];
+        inherit specialArgs;
+      };
       hyperboid-schmesktop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [

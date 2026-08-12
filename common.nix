@@ -20,17 +20,12 @@
     battery-health-charging
   ];
 in {
+  /*
   boot.loader = {
     efi.canTouchEfiVariables = true;
     grub.enable = true;
     grub.device = "nodev";
     grub.efiSupport = true;
-    /* For some reason this doesn't work anymore?
-    grub.theme = pkgs.sleek-grub-theme.override {
-      withStyle = "white";
-      withBanner = "Choose an OS";
-    };
-    #*/
   };
   # networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
   networking.useNetworkd = lib.mkDefault true;
@@ -49,6 +44,7 @@ in {
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
+  */
 
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_US.UTF-8";
@@ -62,6 +58,7 @@ in {
     LC_TIME = "en_US.UTF-8";
   };
 
+  /*
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -77,6 +74,7 @@ in {
     xkb.layout = "us";
     xkb.variant = "";
   };
+  */
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -125,6 +123,7 @@ in {
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  /*
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.hyperboid = {
     isNormalUser = true;
@@ -138,25 +137,21 @@ in {
         wl-clipboard
         gjs
         vte
-        libhandy
-        partclone
-        id3v2
-        exiftool
         lftp
       ]
       ++ (with unstable; [
         yt-dlp
-        luajitPackages.luarocks
         mpv
         ydotool
         swaylock-effects
       ])
       ++ gnomeExts;
   };
+  */
 
   # Install firefox.
   programs.firefox.enable = true;
-  programs.zsh.enable = true;
+  # programs.zsh.enable = true;
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
     vte
@@ -187,11 +182,10 @@ in {
   ]);
   programs.kdeconnect = {
     enable = true;
-    package = pkgs.gnomeExtensions.gsconnect;
   };
   programs.steam = {
     enable = true;
-    extest.enable = true;
+    # extest.enable = true;
   };
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -200,8 +194,14 @@ in {
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = (with pkgs; [
+    bat
+    distrobox
     neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
+    htop
+    libqalculate
+    (pkgs.writeShellScriptBin "love11" "exec -a love ${love}/bin/love $@")
+  /*
     gitFull
     fzf
     zoxide
@@ -214,15 +214,12 @@ in {
     busybox
     pulseaudio
     inotify-tools
-    htop
     kitty
-    libqalculate
-    distrobox
-    (pkgs.writeShellScriptBin "love11" "exec -a love ${love}/bin/love $@")
     ruffle
     python3
+  */
   ]) ++ (with mypkgs; [
-    love
+    # love
   ]);
   programs.obs-studio = {
     enable = true;
@@ -254,6 +251,7 @@ in {
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
+  /*
   services.openssh.enable = true;
   services.kanata = {
     enable = true;
@@ -266,10 +264,12 @@ in {
   };
   systemd.services.kanata-laptop.serviceConfig.User = lib.mkForce "root";
 
+  */
   virtualisation.podman = {
     enable = true;
     dockerCompat = true;
   };
+  /*
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -289,4 +289,5 @@ in {
   system.stateVersion = "23.11"; # Did you read the comment?
 
   home-manager.extraSpecialArgs = specialArgs;
+  */
 }
