@@ -161,6 +161,10 @@ in {
     nss
     nspr
     atkmm
+    libvlc
+    libGL
+    libpulseaudio
+    pipewire
    ] ++ (with unstable; [
     at-spi2-atk
     cups.lib
