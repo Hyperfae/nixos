@@ -8,17 +8,17 @@
   ...
 }: {
   services.minecraft-server = {
-    enable = true;
-    dataDir = "/opt/minecraf";
+    enable = false;
+    dataDir = "/mnt/olddrive/opt/minecrafTWO/";
     eula = true;
     openFirewall = true;
     package = pkgs.minecraft-server.override {
-      url = "https://piston-data.mojang.com/v1/objects/6cd1e711f62dc45497df6f390a9e83ba6191be41/server.jar";
-      sha1 = "86z92qdshfg0lfbgvybm9i1dyq8yglbc";
+      url = "https://piston-data.mojang.com/v1/objects/9580afcd37c63cb01e81d5d9f836f21b4d21c540/server.jar";
+      sha1 = "832j2k8vy8vginfmh4gb0g666z6sz04m";
       jre_headless = pkgs.jdk25_headless;
     };
   };
-  users.users.hyperboid.extraGroups = [ "minecraft" ];
+  users.users.lizzie.extraGroups = [ "minecraft" ];
   users.users.minecraft = {
     extraGroups = ["systemd-journal"];
     packages = with pkgs; [

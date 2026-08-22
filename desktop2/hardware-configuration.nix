@@ -36,6 +36,10 @@
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
+  fileSystems."/mnt/olddrive" =
+    { device = "/dev/disk/by-uuid/b371405d-e04b-4e5a-835c-e412d23071ea";
+      fsType = "ext4";
+    };
 
   swapDevices = [ ];
 
