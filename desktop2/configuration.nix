@@ -101,6 +101,7 @@ in
   users.groups.lizzie = {};
 
   # programs.firefox.enable = true;
+  programs.zsh.enable = true;
   programs.partition-manager.enable = true;
 
   # List packages installed in system profile.
@@ -113,6 +114,11 @@ in
   ]) ++ (with mypkgs; [
     love
   ]);
+
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = false;
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
