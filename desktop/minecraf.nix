@@ -8,15 +8,11 @@
   ...
 }: {
   services.minecraft-server = {
-    enable = false;
+    enable = true;
     dataDir = "/mnt/olddrive/opt/minecrafTWO/";
     eula = true;
     openFirewall = true;
-    package = pkgs.minecraft-server.override {
-      url = "https://piston-data.mojang.com/v1/objects/9580afcd37c63cb01e81d5d9f836f21b4d21c540/server.jar";
-      sha1 = "832j2k8vy8vginfmh4gb0g666z6sz04m";
-      jre_headless = pkgs.jdk25_headless;
-    };
+    package = pkgs.minecraftServers.vanilla;
   };
   users.users.lizzie.extraGroups = [ "minecraft" ];
   users.users.minecraft = {
