@@ -23,12 +23,7 @@
   pname = "love";
   version = "12.0";
 
-  src = fetchFromGitHub {
-    owner = "love2d";
-    repo = "love";
-    rev = "main";
-    sha256 = "sha256-r1pG/tPxmsdfJLZdU7ydtAbKq4QYk48gjqaSiizaYYo=";
-  };
+  src = fetchFromGitHub (builtins.fromJSON (builtins.readFile ./love.json));
 
   nativeBuildInputs = [
     cmake
