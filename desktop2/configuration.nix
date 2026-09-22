@@ -104,6 +104,7 @@ in
   # programs.firefox.enable = true;
   programs.zsh.enable = true;
   programs.partition-manager.enable = true;
+  programs.septabee.enable = true;
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).

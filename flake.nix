@@ -9,6 +9,10 @@
     nixpkgs-wine.url = "github:nixos/nixpkgs/2c8d3f48d33929642c1c12cd243df4cc7d2ce434";
     home-manager.url = "github:nix-community/home-manager/release-25.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    septabee = {
+        url = "github:Ap6661/septabee-flake";
+        inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {
@@ -84,6 +88,7 @@
       lizzie-desktop = nixpkgs-unstable.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
+          inputs.septabee.nixosModules.default
           ./desktop2/configuration.nix
           ./common.nix
         ];
