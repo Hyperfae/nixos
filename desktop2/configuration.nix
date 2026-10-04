@@ -40,6 +40,10 @@ in
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
 
+  qt = {
+    enable = true;
+    platformTheme = "kde";
+  };
   # Set your time zone.
   # time.timeZone = "Europe/Amsterdam";
 
