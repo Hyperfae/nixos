@@ -85,6 +85,7 @@ in
   services.pipewire = {
     enable = true;
     pulse.enable = true;
+    jack.enable = true;
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
