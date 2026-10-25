@@ -232,6 +232,10 @@ in {
       obs-pipewire-audio-capture
       obs-backgroundremoval
       obs-vkcapture
+      obs-freeze-filter
+      # obs-move-transition
+      obs-source-clone
+      obs-composite-blur
     ];
   };
   programs.appimage = {

@@ -11,7 +11,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     septabee = {
         url = "github:Ap6661/septabee-flake";
-        inputs.nixpkgs.follows = "nixpkgs";
+        inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
   };
 
@@ -123,7 +123,7 @@
     packages = forAllSystems ({system, pkgs, pkgs-unstable}: {
       tiled = pkgs-unstable.libsForQt5.callPackage ./packages/tiled-master.nix {};
     }) // (forSystems (supportedSystems ++ ["aarch64-darwin" "x86_64-darwin"]) ({system, pkgs, pkgs-unstable}: {
-      love = pkgs.callPackage ./packages/love.nix {inherit system;};
+      love = pkgs-unstable.callPackage ./packages/love.nix {inherit system;};
     }));
   };
 }
