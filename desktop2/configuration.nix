@@ -101,6 +101,8 @@ in
       tree
       git
       lazygit
+      unityhub
+      alcom
     ];
   };
 
