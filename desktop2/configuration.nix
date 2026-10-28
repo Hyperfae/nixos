@@ -103,6 +103,26 @@ in
       lazygit
       unityhub
       alcom
+      wineWow64Packages.stagingFull
+      tiled
+      wl-clipboard
+      blender
+      sm64coopdx
+      shader-slang
+      mpv
+      emmylua-check
+      emmylua-formatter
+      emmylua-ls
+      ffmpeg
+      gh
+      git-subrepo
+      nerd-fonts.hack
+      jq
+      keepassxc
+      krita
+      lmms-full
+      luajit
+      sm64coopdx
     ];
   };
 
