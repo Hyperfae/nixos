@@ -128,6 +128,7 @@ in
       godot
       kdePackages.kdialog
       audacity
+      gdb
     ];
   };
 
