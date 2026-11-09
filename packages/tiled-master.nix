@@ -31,12 +31,7 @@ stdenv.mkDerivation rec {
   # nixpkgs-update: no auto update
   version = "1.12.2";
 
-  src = fetchFromGitHub {
-    owner = "mapeditor";
-    repo = "tiled";
-    rev = "master";
-    sha256 = "sha256-A43LA/E/eCpBxVV+T68fKbh/AZepagEoia/hljeEjf0=";
-  };
+  src = fetchFromGitHub (lib.importJSON ./tiled-master.json);
 
   nativeBuildInputs = [
     pkg-config
