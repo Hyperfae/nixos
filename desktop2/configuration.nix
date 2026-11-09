@@ -61,6 +61,7 @@ in
 
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
+  services.kmscon.enable = true;
 
   # Enable the GNOME Desktop Environment.
   # services.displayManager.gdm.enable = true;
@@ -123,6 +124,10 @@ in
       lmms-full
       luajit
       sm64coopdx
+      rlwrap
+      godot
+      kdePackages.kdialog
+      audacity
     ];
   };
 
