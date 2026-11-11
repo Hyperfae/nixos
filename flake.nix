@@ -1,4 +1,4 @@
-#{  outputs = { self, nixpkgs }: {    nixosConfigurations.hyperboid-laptop = nixpkgs.lib.nixosSystem {      system = "x86_64-linux";      modules = [ ./configuration.nix ];    };  };}
+# vim:sw=2
 {
   description = "NixOS configuration";
 
@@ -7,6 +7,7 @@
     nixpkgs-2411.url = "github:nixos/nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-wine.url = "github:nixos/nixpkgs/2c8d3f48d33929642c1c12cd243df4cc7d2ce434";
+    nixpkgs-alcom.url = "github:nixos/nixpkgs/31ecbaca1bdefa45dffc409f0250bd8039ea0010";
     home-manager.url = "github:nix-community/home-manager/release-25.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     septabee = {
@@ -120,10 +121,15 @@
         inherit specialArgs;
       };
     };
-    packages = forAllSystems ({system, pkgs, pkgs-unstable}: {
-    }) // (forSystems (supportedSystems ++ ["aarch64-darwin" "x86_64-darwin"]) ({system, pkgs, pkgs-unstable}: {
-      tiled = pkgs-unstable.libsForQt5.callPackage ./packages/tiled-master.nix {};
-      love = pkgs-unstable.callPackage ./packages/love.nix {inherit system;};
-    }));
+    packages = (
+      forSystems (supportedSystems ++ ["aarch64-darwin" "x86_64-darwin"]) ({system, pkgs, pkgs-unstable}: {
+        tiled = pkgs-unstable.libsForQt5.callPackage ./packages/tiled-master.nix {};
+        love = pkgs-unstable.callPackage ./packages/love.nix {inherit system;};
+      } // {
+        pinned-versions = {
+          alcom = inputs.nixpkgs-alcom.legacyPackages.${system}.alcom;
+        };
+      }
+    ));
   };
 }

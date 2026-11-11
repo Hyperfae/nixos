@@ -53,13 +53,29 @@
         "type": "github"
       }
     },
-    "nixpkgs-unstable": {
+    "nixpkgs-alcom": {
       "locked": {
         "lastModified": 1793110635,
         "narHash": "sha256-dhoW6VgFWlaodSY5jrBn+CF2FLmaUvDVgM7+C7T2+NM=",
         "owner": "nixos",
         "repo": "nixpkgs",
         "rev": "31ecbaca1bdefa45dffc409f0250bd8039ea0010",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "31ecbaca1bdefa45dffc409f0250bd8039ea0010",
+        "type": "github"
+      }
+    },
+    "nixpkgs-unstable": {
+      "locked": {
+        "lastModified": 1794042290,
+        "narHash": "sha256-ziZn2PvCJE5JEEpqTdxXwJpPB+L3YqoCpTAMCzyaP3U=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "f4a03c008967841f2a0b3cb7c436fc6fc31671f6",
         "type": "github"
       },
       "original": {
@@ -90,6 +106,7 @@
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "nixpkgs-2411": "nixpkgs-2411",
+        "nixpkgs-alcom": "nixpkgs-alcom",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nixpkgs-wine": "nixpkgs-wine",
         "septabee": "septabee"
@@ -102,11 +119,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792203302,
-        "narHash": "sha256-xBoaPUalFhKmQPU25tzW0rRzrvLpEfgpofP4rjz842I=",
+        "lastModified": 1793668661,
+        "narHash": "sha256-gpa/T65EaG4Eqz7+DXZm6CU9ZAKoO996mCPhux+ZoxU=",
         "owner": "Ap6661",
         "repo": "septabee-flake",
-        "rev": "bf52b2e9587c2b211fdbf6ec78870e8559a2a1c3",
+        "rev": "2f7033f0096f5876f779fd836f2c648e64a2d207",
         "type": "github"
       },
       "original": {

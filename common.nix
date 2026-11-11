@@ -157,7 +157,7 @@ in {
     vte
     libhandy
     glib
-    xorg.libxshmfence
+    libxshmfence
     nss
     nspr
     atkmm

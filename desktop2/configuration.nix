@@ -33,6 +33,7 @@ in
     };
     #*/
   };
+  boot.kernel.sysctl."kernel.sysrq" = 1;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   networking.hostName = "lizzie-desktop"; # Define your hostname.
@@ -86,7 +87,6 @@ in
   services.pipewire = {
     enable = true;
     pulse.enable = true;
-    jack.enable = true;
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -103,7 +103,7 @@ in
       git
       lazygit
       unityhub
-      alcom
+      mypkgs.pinned-versions.alcom
       wineWow64Packages.stagingFull
       tiled
       wl-clipboard
@@ -129,6 +129,7 @@ in
       kdePackages.kdialog
       audacity
       gdb
+      yt-dlp
     ];
   };
 
